@@ -1,0 +1,288 @@
+%pointer {
+	cursor:pointer;
+}
+* {
+	border-size : border-box;
+}
+.hidden {
+	display:none;
+}
+.my-alert {
+	li {
+		list-style:none;
+	}
+}
+h1 {
+	font-family: 'OpenSansBold';
+}
+.photo-salle {
+	width:100%;
+	height:150px;
+	overflow-y: hidden;
+}
+.carousel-overflow {
+	overflow-y: hidden;
+	height: 300px;
+}
+.amoutRange {
+	border:0;
+	font-weight:bold;
+	color:#993333;
+	text-align:center;
+}
+.mySliderRange {
+	width:100%;
+}
+.head-caption {
+  padding:2px 10px;
+  height:85px;
+  border-bottom:1px solid #dddddd;
+  h4 {
+  	a {
+  		&:hover {
+  			text-decoration: none;
+  		}
+  	}
+  }
+  h5 {
+  	font-weight:bold;
+  	color:#333333;
+  }
+}
+.body-caption {
+	.content-caption {
+		height:50px;
+		padding:5px 10px;
+		overflow-y:hidden;
+		border-bottom:1px solid #eeeeee;
+		text-align:justify;
+		font-size:0.9em;
+	}
+	.date-caption {
+		padding:5px 10px;
+	
+	}
+	.bt-caption {
+		padding: 10px;
+		text-align:left;
+	}
+}
+.nb_result {
+	color:#cccccc;
+	font-style: italic;
+	font-size:0.9em;
+}
+.float-right {
+	float:right;
+}
+table {
+	width:100%;
+}
+.datatable {
+	font-size:0.9em;
+	width:100%;
+	span.action {
+		@extend %pointer;
+		display:block;
+		padding:3px 20px;
+		white-space: nowrap;
+		&:hover {
+			background:#eeeeee;
+		}
+	}
+}
+.cgv {
+	font-size:0.9em;
+}
+.container-map {
+	h1, h2, h3, h4 {
+		padding:0 0 10px 0;
+		margin: 0;
+	}
+	position:relative;
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid #dddddd;
+	margin-bottom:10 0px;
+
+}
+.field-required{
+	&::after {
+		content: "*";
+		color: red;
+	}
+	
+}
+
+.div-reservation {
+	border-bottom: 1px solid #dddddd;
+}
+#listAvis {
+	.avis {
+		border-bottom:1px solid #dddddd;
+		margin-bottom:10px;
+		&:last-child {
+			border-bottom:none;
+			margin-bottom:0;
+		}
+		.user {
+			font-style:italic;
+			display: inline-block;
+		}
+		.note {
+			display: inline-block;
+			margin-right:10px;
+		}
+		div.quote-left {
+			color:#666666;
+		}
+		div.quote-right {
+			color:#666666;
+			text-align: right;
+		}
+	}
+}
+.otherSuggestion {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+
+	h1, h2, h3 {
+		border-bottom: 1px solid #ddd;
+		padding: 10px 0;
+	}
+	.suggest {
+		.title {
+				font-weight: bold;
+				height:30px;
+				line-height:30px;
+			}
+		.date {
+			height:30px;
+		}
+		.img {
+			width:100%;
+			height: 150px;
+			overflow-y:hidden;
+
+			img {
+				width:100%;
+			}
+		}
+	}
+}
+.thumbnail {
+	.row {
+		&>div {
+			min-height:30px;
+		}
+	}
+	h4 {
+		font-weight:bold;
+	}
+}
+.fiche-order {
+	img {
+		width:100%;
+	}
+	.identity {
+		background:#eeeeee;
+	}
+}
+.myModal {
+	h3 {
+		color:#eeeeee;
+		border-radius:5px 5px 0 0;
+		margin:0;
+		padding:10px 10px;
+		background:#333333;
+	}
+	.align-right {
+		text-align:right;
+	}
+	.modalDetail {
+		$rowDetail : 30px;
+		background:#eeeeee;
+		border-radius:0 0 5px 5px;
+		float:left;
+		width:100%;
+		.row {
+			height: $rowDetail;
+			line-height: $rowDetail;
+		}
+		.modal-label {
+			font-weight:bold;
+		}
+	}
+}
+.black-window {
+	background: rgba(#000, 0.8);
+	top:0; bottom:0; left:0; right:0;
+	z-index:2010;
+	position:fixed;
+	.container-photo {
+		position:fixed;
+		z-index:2020;
+		top:20px;
+		img {
+			display:block;
+			width:90%;
+			margin:0 auto;
+			border:7px solid #eeeeee;
+			border-radius: 5px;
+		}
+	}
+	i {
+		color:white;
+		&:hover {
+			color:#999999;
+			cursor:pointer;
+		}
+	}
+}
+.photo {
+	cursor:pointer;
+}
+#notes {
+	i {
+		cursor:pointer;
+	}
+}
+#seeMore {
+
+}
+#map {
+	height:200px;
+	width:100%;
+}
+.clear-field {
+	$width-clear-date:35px;
+	display:none;
+	position:absolute;
+	height:100%;
+	min-width: $width-clear-date;
+	margin-left: -$width-clear-date;
+	line-height: $width-clear-date;
+	z-index:100;
+	color:#999;
+	text-align:center;
+	&:hover {
+		@extend %pointer;
+		color:#666;
+	}
+}
+footer {
+	text-align: center;
+}
+.bg_grey{ background:#eeeeee !important; }
+@media screen and (max-width: 768px){ 
+	select, textarea {
+		font-size:16px !important;
+	}
+	input {
+		&[type="text"],&[type="email"], &[type="number"], &[type="password"] {
+			font-size:16px;
+		}
+	}
+
+}
+@import 'fonts';
+@import 'bootstrapAdd';

@@ -22,3 +22,22 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Salle::class, function (Faker\Generator $faker) {
+    $photo = rand(14, 21);
+    $villes = ['Paris', 'Lyon', 'Marseille'];
+    $categories = ['reunion', 'bureau', 'formation'];
+
+
+    return [
+        'titre' => $faker->firstName,
+        'description' => $faker->realText(),
+        'photo' => 'photo/' . $photo . '.jpg',
+        'pays' => 'France',
+        'ville' => $villes[$faker->numberBetween(0, 2)],
+        'adresse' => $faker->address,
+        'cp' => $faker->postcode,
+        'capacite' => $faker->numberBetween(50, 150),
+        'categorie' => $categories[$faker->numberBetween(0, 2)],
+    ];
+});

@@ -1,0 +1,111 @@
+$black:#000000;
+$green:#64AF48; $darkgreen:#5EA245; $lightgreen:#6FC041;
+$red:#993333; $darkred:#990000; $lightred:#cc3333;
+$blue:#336699; $darkblue:#1c5179; $lightblue:#2d82c3;
+$grey:#999999; $darkgrey:#333333; $lightgrey:#dddddd;
+@mixin panel( $color)
+{
+
+    border-color: $color;
+    &> .panel-heading
+    { 
+      color: #fff;
+      background-color: $color;
+      border-color: $color;
+      &+ .panel-collapse {
+        &> .panel-body {
+          border-top-color: $color;
+        }
+      }
+      & .badge {
+        color: $color;
+        background-color: #fff;
+      }
+    }
+    &> .panel-footer {
+      &+ .panel-collapse {
+       &> .panel-body {
+        border-bottom-color: $color;
+       }
+      }
+    }
+}
+
+@mixin btn($name, $color, $darkcolor, $lightcolor) {
+
+  color: #fff;
+  background-color: $color;
+  border-color: $color;
+  &:focus, .focus {
+    color: #fff;
+    background-color: $lightcolor;
+    border-color: $color;
+  }
+  &:hover {
+    color: #fff;
+    background-color: $lightcolor;
+    border-color: $color;
+  }
+  &:active, .active, .open > .dropdown-toggle.btn-#{$name} {
+    color: #fff;
+    background-color: $lightcolor;
+    border-color: $color;
+    background-image: none;
+
+  }
+  &:active:hover, .active:hover, .open > .dropdown-toggle.btn-#{$name}:hover, 
+  :active:focus, .active:focus,.open > .dropdown-toggle.btn-#{$name}:focus {
+    color: #fff;
+    background-color: $darkcolor;
+    border-color: $color;
+  }
+  &.disabled:hover, [disabled]:hover, fieldset[disabled] .btn-#{$name}:hover, 
+  .disabled:focus, [disabled]:focus, fieldset[disabled] .btn-#{$name}:focus,
+  .disabled.focus, [disabled].focus, fieldset[disabled] .btn-#{$name}.focus {
+    background-color: $color;
+    border-color: #color;
+  }
+  &.badge {
+    color: $color;
+    background-color: #fff;
+  }
+
+
+}
+
+
+
+
+
+.panel-black {
+  @include panel($black);
+}
+.panel-green {
+  @include panel($green);
+}
+.panel-blue {
+  @include panel($blue);
+}
+.panel-red {
+  @include panel($red);
+}
+.panel-grey {
+  @include panel($grey);
+}
+
+
+.btn-black {
+  @include btn('black', $black, $black,$black);
+}
+.btn-green {
+  @include btn('green', $green, $darkgreen, $lightgreen);
+}
+.btn-blue {
+  @include btn('blue', $blue, $darkblue, $lightblue);
+}
+.btn-red {
+  @include btn('red', $red, $darkred, $lightred);
+}
+.btn-grey {
+  @include btn('grey', $grey, $darkgrey, $lightgrey);
+}

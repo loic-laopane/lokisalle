@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'OpenSansExtraBoldItalic';
+    src: url('../../fonts/OpenSans-ExtraBoldItalic-webfont.eot');
+    src: url('../../fonts/OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
+         url('../../fonts/OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'),
+         url('../../fonts/OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+

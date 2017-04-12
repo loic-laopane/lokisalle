@@ -1,0 +1,85 @@
+
+$column : 12!default;
+$padding : 10px!default;
+$m : 768px;
+$l : 1024px;
+
+%td {
+    //float: left;
+    //background: #ddd;
+    //border: 1px solid #ccc;
+    padding: 2px $padding;
+    //position: relative;
+   
+}
+%clearfix {
+    &:before, &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }
+    & {
+        zoom:1; /* For IE 6/7 (trigger hasLayout) */
+    }
+}
+@mixin td($suffixe:'s'){
+    @for $i from 0 through $column {
+        @if($i != 0) {
+            .td-#{$suffixe}-#{$i}{ width: $i * 100% / $column;}
+        }
+        .td-#{$suffixe}-left-#{$i}{
+            margin-left: $i * 100% / $column;
+        }
+        .td-#{$suffixe}-center { margin: 0 auto; float:none;}
+    }
+    .td-#{$suffixe}-hide { display: none;}
+    .td-#{$suffixe}-show { display: table-cell;}
+}
+.container {
+    position: relative;
+}
+.tr {
+    margin: 0px;
+    @extend %clearfix;
+    position: relative;
+
+    
+}
+.td-center { margin: 0 auto; float:none;}
+.no-padding {
+    padding: 0px;
+}
+.no-padding-top {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.no-padding-left {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.no-margin {
+    margin:0;
+}
+.no-margin-top {
+    margin-top:0;
+    margin-bottom:0;
+}
+.margin {
+    margin: 2px 0;
+}
+
+@for $i from 1 through $column {
+    .td-s-#{$i}, .td-m-#{$i}, .td-l-#{$i}{@extend %td;}
+    .tr-#{$i} { margin: #{$i}px 0};
+}
+@include td();
+
+@media screen and (min-width:$m){
+    @include td('m');
+}
+
+@media screen and (min-width:$l){
+    @include td('l');
+}
